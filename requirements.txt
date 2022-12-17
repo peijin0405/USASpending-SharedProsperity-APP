@@ -2,4 +2,3 @@ country_converter==0.7.3
 numpy==1.21.6
 pandas==1.2.4
 plotly==5.7.0
-streamlit==1.16.0
