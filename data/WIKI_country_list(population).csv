@@ -1,0 +1,242 @@
+,Country / Dependency,UN Region,Population,Date,standard_names
+1,China,Asia,1412600000,31 Dec 2021,China
+2,India,Asia,1373761000,1 Mar 2022,India
+3,United States,Americas,332903153,19 Jul 2022,United States
+4,Indonesia,Asia,272248500,1 Jul 2021,Indonesia
+5,Pakistan,Asia,229488994,1 Jul 2022,Pakistan
+6,Nigeria,Africa,216746934,1 Jul 2022,Nigeria
+7,Brazil,Americas,214902876,19 Jul 2022,Brazil
+8,Bangladesh,Asia,168220000,1 Jul 2020,Bangladesh
+9,Russia,Europe,147190000,1 Oct 2021,Russia
+10,Mexico,Americas,128271248,31 Mar 2022,Mexico
+11,Japan,Asia,125502000,1 Oct 2021,Japan
+12,Ethiopia,Africa,120812698,1 Jul 2022,Ethiopia
+13,Philippines,Asia,112170196,19 Jul 2022,Philippines
+14,Egypt,Africa,103596325,19 Jul 2022,Egypt
+15,Vietnam,Asia,98505400,1 Jul 2021,Vietnam
+16,DR Congo,Africa,92378000,1 Jul 2021,DR Congo
+17,Iran,Asia,85617295,19 Jul 2022,Iran
+18,Turkey,Asia,84680273,31 Dec 2021,Turkey
+19,Germany,Europe,83695430,31 Mar 2022,Germany
+20,France,Europe,67874000,1 Jun 2022,France
+21,United Kingdom,Europe,67081234,30 Jun 2020,United Kingdom
+22,Thailand,Asia,66813330,19 Jul 2022,Thailand
+23,South Africa,Africa,60142978,1 Jul 2021,South Africa
+24,Tanzania,Africa,59441988,1 Jul 2021,Tanzania
+25,Italy,Europe,58906742,31 Mar 2022,Italy
+26,Myanmar,Asia,55294979,1 Jul 2021,Myanmar
+27,South Korea,Asia,51745000,31 Dec 2021,South Korea
+28,Colombia,Americas,51049498,30 Jun 2021,Colombia
+29,Kenya,Africa,47564296,31 Aug 2019,Kenya
+30,Spain,Europe,47432805,1 Jan 2022,Spain
+31,Argentina,Americas,47327407,18 May 2022,Argentina
+32,Algeria,Africa,45400000,1 Jan 2022,Algeria
+33,Sudan,Africa,44601270,19 Jul 2022,Sudan
+34,Uganda,Africa,42885900,1 Jul 2021,Uganda
+35,Iraq,Asia,41190700,1 Jul 2021,Iraq
+36,Ukraine,Europe,41130432,1 Feb 2022,Ukraine
+37,Canada,Americas,38823639,19 Jul 2022,Canada
+38,Poland,Europe,38014000,1 May 2022,Poland
+39,Morocco,Africa,36664786,19 Jul 2022,Morocco
+40,Uzbekistan,Asia,35661665,19 Jul 2022,Uzbekistan
+41,Saudi Arabia,Asia,35013414,1 Jul 2020,Saudi Arabia
+42,Peru,Americas,33396698,1 Jul 2022,Peru
+43,Angola,Africa,33086278,30 Jun 2022,Angola
+44,Afghanistan,Asia,32890171,1 Jul 2020,Afghanistan
+45,Malaysia,Asia,32728400,19 Jul 2022,Malaysia
+46,Mozambique,Africa,31616078,1 Jul 2022,Mozambique
+47,Ghana,Africa,30832019,27 Jun 2021,Ghana
+48,Yemen,Asia,30491000,1 Jul 2021,Yemen
+49,Nepal,Asia,29192480,11 Nov 2021,Nepal
+50,Venezuela,Americas,28705000,1 Jul 2021,Venezuela
+51,Ivory Coast,Africa,27087732,1 Jul 2021,Cote d'Ivoire
+52,Madagascar,Africa,26923353,1 Jul 2021,Madagascar
+53,Australia,Oceania,25920968,19 Jul 2022,Australia
+54,North Korea,Asia,25660000,1 Jul 2021,North Korea
+55,Cameroon,Africa,24348251,1 Jul 2019,Cameroon
+56,Niger,Africa,24112753,1 Jul 2021,Niger
+57,Taiwan,Asia,23375314,31 Dec 2021,Taiwan
+58,Sri Lanka,Asia,22156000,1 Jul 2021,Sri Lanka
+59,Burkina Faso,Africa,21510181,1 Jul 2020,Burkina Faso
+60,Malawi,Africa,21507723,1 Jul 2022,Malawi
+61,Mali,Africa,21473764,1 Jul 2022,Mali
+62,Chile,Americas,19678363,30 Jun 2021,Chile
+63,Kazakhstan,Asia,19267584,19 Jul 2022,Kazakhstan
+64,Romania,Europe,19186201,1 Jan 2021,Romania
+65,Zambia,Africa,18400556,1 Jul 2021,Zambia
+66,Syria,Asia,18276000,1 Jul 2021,Syria
+67,Ecuador,Americas,18023212,19 Jul 2022,Ecuador
+68,Netherlands,Europe,17717959,19 Jul 2022,Netherlands
+69,Senegal,Africa,17223497,1 Jul 2021,Senegal
+70,Guatemala,Americas,17109746,1 Jul 2021,Guatemala
+71,Chad,Africa,16818391,1 Jul 2021,Chad
+72,Somalia,Africa,16360000,1 Jul 2021,Somalia
+73,Zimbabwe,Africa,15790716,1 Jul 2021,Zimbabwe
+74,Cambodia,Asia,15552211,3 Mar 2019,Cambodia
+75,South Sudan,Africa,13249924,1 Jul 2020,South Sudan
+76,Rwanda,Africa,12955768,1 Jul 2021,Rwanda
+77,Guinea,Africa,12907395,1 Jul 2021,Guinea
+78,Burundi,Africa,12574571,1 Jul 2021,Burundi
+79,Benin,Africa,12506347,1 Jul 2021,Benin
+80,Bolivia,Americas,11797257,1 Jul 2021,Bolivia
+81,Tunisia,Africa,11746695,1 Jul 2020,Tunisia
+82,Haiti,Americas,11743017,1 Jul 2020,Haiti
+83,Belgium,Europe,11657619,1 Apr 2022,Belgium
+84,Jordan,Asia,11256108,19 Jul 2022,Jordan
+85,Cuba,Americas,11113215,31 Dec 2021,Cuba
+86,Greece,Europe,10603810,1 Jan 2022,Greece
+87,Dominican Republic,Americas,10535535,1 Jul 2021,Dominican Republic
+88,Czech Republic,Europe,10516708,1 Jan 2022,Czech Republic
+89,Sweden,Europe,10475203,30 Apr 2022,Sweden
+90,Portugal,Europe,10347892,22 Mar 2021,Portugal
+91,Azerbaijan,Asia,10164464,1 Mar 2022,Azerbaijan
+92,Hungary,Europe,9689000,1 Jan 2022,Hungary
+93,Israel,Asia,9548060,19 Jul 2022,Israel
+94,Honduras,Americas,9546178,1 Jul 2021,Honduras
+95,Tajikistan,Asia,9506000,1 Jan 2021,Tajikistan
+96,Belarus,Europe,9349645,1 Jan 2021,Belarus
+97,United Arab Emirates,Asia,9282410,31 Dec 2020,United Arab Emirates
+98,Papua New Guinea,Oceania,9122994,1 Jul 2021,Papua New Guinea
+99,Austria,Europe,9027999,1 Apr 2022,Austria
+100,Switzerland,Europe,8753933,31 Mar 2022,Switzerland
+101,Sierra Leone,Africa,8297882,1 Jul 2021,Sierra Leone
+102,Togo,Africa,7886000,1 Jul 2021,Togo
+103,Hong Kong ,Asia,7403100,31 Dec 2021,Hong Kong
+104,Paraguay,Americas,7353038,1 Jul 2021,Paraguay
+105,Laos,Asia,7337783,1 Jul 2021,Laos
+106,Libya,Africa,7054493,1 Jul 2022,Libya
+107,El Salvador,Americas,6825935,1 Jul 2021,El Salvador
+108,Serbia,Europe,6797105,1 Jan 2022,Serbia
+109,Lebanon,Asia,6769000,1 Jul 2021,Lebanon
+110,Kyrgyzstan,Asia,6700000,1 Apr 2021,Kyrgyz Republic
+111,Nicaragua,Americas,6595674,30 Jun 2020,Nicaragua
+112,Bulgaria,Europe,6520314,7 Sep 2021,Bulgaria
+113,Turkmenistan,Asia,6118000,1 Jul 2021,Turkmenistan
+114,Denmark,Europe,5883562,1 Apr 2022,Denmark
+115,Congo,Africa,5657000,1 Jul 2021,Congo Republic
+116,Central African Republic,Africa,5633412,1 Jul 2020,Central African Republic
+117,Finland,Europe,5550066,1 Feb 2022,Finland
+118,Singapore,Asia,5453600,30 Jun 2021,Singapore
+119,Norway,Europe,5435536,31 Mar 2022,Norway
+120,Slovakia,Europe,5434712,31 Dec 2021,Slovakia
+121,Palestine,Asia,5227193,1 Jul 2021,Palestine
+122,Costa Rica,Americas,5163038,30 Jun 2021,Costa Rica
+123,New Zealand,Oceania,5133062,19 Jul 2022,New Zealand
+124,Ireland,Europe,5123536,3 Apr 2022,Ireland
+125,Kuwait,Asia,4670713,31 Dec 2020,Kuwait
+126,Liberia,Africa,4661010,1 Jul 2021,Liberia
+127,Oman,Asia,4527446,31 Dec 2021,Oman
+128,Panama,Americas,4278500,1 Jul 2020,Panama
+129,Mauritania,Africa,4271197,1 Jul 2021,Mauritania
+130,Croatia,Europe,3888529,31 Aug 2021,Croatia
+131,Georgia,Asia,3728573,1 Jan 2021,Georgia
+132,Eritrea,Africa,3601000,1 Jul 2021,Eritrea
+133,Uruguay,Americas,3554915,30 Jun 2021,Uruguay
+134,Mongolia,Asia,3447939,19 Jul 2022,Mongolia
+135,Bosnia and Herzegovina,Europe,3320954,1 Jul 2020,Bosnia and Herzegovina
+136,Puerto Rico ,Americas,3285874,1 Apr 2020,Puerto Rico
+137,Armenia,Asia,2963900,31 Mar 2021,Armenia
+138,Albania,Europe,2829741,1 Jan 2021,Albania
+139,Qatar,Asia,2799202,31 Jul 2019,Qatar
+140,Lithuania,Europe,2794961,1 Jan 2022,Lithuania
+141,Jamaica,Americas,2734093,31 Dec 2019,Jamaica
+142,Moldova,Europe,2597100,1 Jan 2021,Moldova
+143,Namibia,Africa,2550226,1 Jul 2021,Namibia
+144,Gambia,Africa,2487000,1 Jul 2021,Gambia
+145,Botswana,Africa,2410338,1 Jul 2021,Botswana
+146,Gabon,Africa,2233272,1 Jul 2021,Gabon
+147,Lesotho,Africa,2159000,1 Jul 2021,Lesotho
+148,Slovenia,Europe,2108977,1 Jan 2021,Slovenia
+149,Latvia,Europe,1874900,1 Dec 2021,Latvia
+150,North Macedonia,Europe,1832696,1 Nov 2021,Macedonia
+151,Kosovo,Europe,1798188,31 Dec 2020,Kosovo
+152,Guinea-Bissau,Africa,1646077,1 Jul 2021,Guinea-Bissau
+153,Equatorial Guinea,Africa,1505588,1 Jul 2021,Equatorial Guinea
+154,Bahrain,Asia,1501635,17 Mar 2020,Bahrain
+155,Trinidad and Tobago,Americas,1367558,30 Jun 2021,Trinidad and Tobago
+156,Estonia,Europe,1331796,1 Jan 2022,Estonia
+157,East Timor,Asia,1317780,1 Jul 2021,Timor-Leste
+158,Mauritius,Africa,1266334,30 Jun 2021,Mauritius
+159,Eswatini,Africa,1172000,1 Jul 2021,Eswatini
+160,Djibouti,Africa,976107,1 Jul 2019,Djibouti
+161,Cyprus,Asia,918100,1 Oct 2021,Cyprus
+162,Fiji,Oceania,898402,1 Jul 2021,Fiji
+163,Comoros,Africa,758316,15 Dec 2017,Comoros
+164,Bhutan,Asia,763200,30 May 2022,Bhutan
+165,Guyana,Americas,743699,1 Jul 2019,Guyana
+166,Solomon Islands,Oceania,728041,1 Jul 2021,Solomon Islands
+167,Macau ,Asia,683200,31 Dec 2021,Macau
+168,Luxembourg,Europe,645397,1 Jan 2022,Luxembourg
+169,Montenegro,Europe,621306,1 Jul 2020,Montenegro
+170,Western Sahara,Africa,612000,1 Jul 2021,Western Sahara
+171,Suriname,Americas,598000,1 Jul 2019,Suriname
+172,Cape Verde,Africa,563198,1 Jul 2021,Cabo Verde
+173,Malta,Europe,514564,31 Dec 2019,Malta
+174,Belize,Americas,430191,1 Jul 2021,Belize
+175,Brunei,Asia,429999,1 Jul 2021,Brunei Darussalam
+176,Bahamas,Americas,393450,1 Jul 2021,Bahamas
+177,Maldives,Asia,383135,31 Dec 2019,Maldives
+178,Northern Cyprus,Asia,382230,31 Dec 2019,Cyprus
+179,Iceland,Europe,377280,31 Mar 2022,Iceland
+180,Transnistria,Europe,306000,1 Jan 2018,not found
+181,Vanuatu,Oceania,301295,1 Jul 2021,Vanuatu
+182,Barbados,Americas,288000,1 Jul 2021,Barbados
+183,French Polynesia ,Oceania,279890,1 Jul 2021,French Polynesia
+184,New Caledonia ,Oceania,273674,1 Jul 2021,New Caledonia
+185,Abkhazia,Asia,245424,1 Jan 2020,not found
+186,São Tomé and Príncipe,Africa,214610,1 Jul 2021,Sao Tome and Principe
+187,Samoa,Oceania,199853,1 Jul 2021,Samoa
+188,Saint Lucia,Americas,178696,1 Jul 2018,St. Lucia
+189,Guam ,Oceania,153836,1 Apr 2020,Guam
+190,Curaçao ,Americas,153671,1 Jan 2021,Curacao
+191,Artsakh,Asia,148900,1 Jan 2021,not found
+192,Kiribati,Oceania,120740,1 Jul 2021,Kiribati
+193,Grenada,Americas,113000,1 Jul 2021,Grenada
+194,Aruba ,Americas,111050,31 Dec 2020,Aruba
+195,Saint Vincent and the Grenadines,Americas,110696,1 Jul 2020,St. Vincent and the Grenadines
+196,Jersey ,Europe,107800,31 Dec 2019,Jersey
+197,Micronesia,Oceania,105754,1 Jul 2021,"Micronesia, Fed. Sts."
+198,Tonga,Oceania,99532,1 Jul 2021,Tonga
+199,Antigua and Barbuda,Americas,99337,1 Jul 2021,Antigua and Barbuda
+200,Seychelles,Africa,99202,30 Jun 2021,Seychelles
+201,U.S. Virgin Islands ,Americas,87146,1 Apr 2020,United States Virgin Islands
+202,Isle of Man ,Europe,84069,30 May 2021,Isle of Man
+203,Andorra,Europe,79535,31 Dec 2021,Andorra
+204,Dominica,Americas,72000,1 Jul 2021,Dominica
+205,Cayman Islands ,Americas,65786,30 Sep 2020,Cayman Islands
+206,Bermuda ,Americas,64055,1 Jul 2021,Bermuda
+207,Guernsey ,Europe,63124,30 Jun 2020,Guernsey
+208,Greenland ,Americas,56562,1 Jan 2022,Greenland
+209,Marshall Islands,Oceania,54516,1 Jul 2021,Marshall Islands
+210,Saint Kitts and Nevis,Americas,54000,1 Jul 2021,St. Kitts and Nevis
+211,Faroe Islands ,Europe,53941,1 May 2022,Faeroe Islands
+212,South Ossetia,Asia,53532,15 Oct 2015,not found
+213,American Samoa ,Oceania,49710,1 Apr 2020,American Samoa
+214,Northern Mariana Islands ,Oceania,47329,1 Apr 2020,Northern Mariana Islands
+215,Turks and Caicos Islands ,Americas,44542,1 Jul 2020,Turks and Caicos Islands
+216,Sint Maarten ,Americas,42577,1 Jan 2021,Sint Maarten
+217,Liechtenstein,Europe,39315,31 Dec 2021,Liechtenstein
+218,Monaco,Europe,39150,31 Dec 2021,Monaco
+219,Gibraltar ,Europe,34000,1 Jul 2021,Gibraltar
+220,San Marino,Europe,33705,30 Mar 2022,San Marino
+221,Saint Martin ,Americas,32489,1 Jan 2019,Saint-Martin
+222,Åland ,Europe,30344,31 Dec 2021,Aland Islands
+223,British Virgin Islands ,Americas,30000,1 Jul 2021,British Virgin Islands
+224,Palau,Oceania,17957,1 Jul 2021,Palau
+225,Cook Islands,Oceania,15342,1 Jul 2021,Cook Islands
+226,Anguilla ,Americas,15000,1 Jul 2021,Anguilla
+227,Nauru,Oceania,11832,1 Jul 2021,Nauru
+228,Wallis and Futuna ,Oceania,11369,1 Jan 2021,Wallis and Futuna Islands
+229,Tuvalu,Oceania,10679,1 Jul 2021,Tuvalu
+230,Saint Barthélemy ,Americas,10289,1 Jan 2019,St. Barths
+231,"Saint Helena, Ascension and Tristan da Cunha ",Africa,6000,1 Jul 2021,St. Helena
+232,Saint Pierre and Miquelon ,Americas,5974,1 Jan 2019,St. Pierre and Miquelon
+233,Montserrat ,Americas,5000,1 Jul 2021,Montserrat
+234,Falkland Islands ,Americas,4000,1 Jul 2021,Falkland Islands
+235,Christmas Island ,Oceania,1966,30 Jun 2020,Christmas Island
+236,Norfolk Island ,Oceania,1734,30 Jun 2020,Norfolk Island
+237,Niue,Oceania,1549,1 Jul 2021,Niue
+238,Tokelau ,Oceania,1501,1 Jul 2021,Tokelau
+239,Vatican City,Europe,825,1 Feb 2019,Vatican
+240,Cocos ,Oceania,573,30 Jun 2020,Cocos (Keeling) Islands
+241,Pitcairn Islands ,Oceania,40,1 Jan 2021,Pitcairn
