@@ -29,7 +29,7 @@ with row0_2:
     st.subheader('Streamlit App by [Peijin Li](https://www.linkedin.com/in/peijin-li-a594a1149/)')
 row3_spacer1, row3_1, row3_spacer2 = st.columns((.1, 3.2, .1))
 with row3_1:
-    st.markdown("This app presents the worldwide distribution of U.S. Grants spending from FY 2014 to FY 2022. Through this app, you could learn the distribution of U.S. Grants by continent and by country. Further, with the Shared Prosperity Index proposed by the World Bank, the app provides a chance to explore the relationship between U.S. Grants and Inclusive Growth")
+    st.markdown("This app presents the worldwide distribution of U.S. Grants spending from FY 2014 to FY 2022. Through this app, you could learn the distribution of U.S. Grants by continent and by country. Further, with the Shared Prosperity Index proposed by the World Bank, the app provides a chance to explore the relationship between U.S. Grants and Inclusive Growth.")
     st.markdown("You can find the source code in the [Peijin GitHub Repository](https://github.com/peijin0405/USASpending-SharedProsperity-APP)")
     
 # About
@@ -101,7 +101,7 @@ with row5_1:
     * **Grants Amount:** Refers to the sum of money given by a USA government to other countries to facilitate a goal or incentivize performance.""")   
     st.markdown("")
     st.markdown("""
-* Each year, more than two hundred countries receive grants from the United States; however grants disproportionately go to a few.
+* Each year, more than two hundred countries receive grants from the United States; however, grants disproportionately go to a few.
 * Africa has long been the largest grants recipient continent.
 * In recent years, there has been a significant increase in funding to East Asia (mainly Ukraine).
 """) 
