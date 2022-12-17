@@ -255,7 +255,7 @@ with row11_1:
 row11_spacer1, row11_1, row11_spacer2, row11_2, row11_spacer3  = st.columns((.2, 2.3, .4, 4.7, .2))
 with row11_1:
     st.markdown("""
-* American countries generally have lower Shared Prosperity (negative). Asia countries: Kzakhstan, Mongolia, Iran, have negative income increase for Bottom 40% population. European countries, except Norway, have positive Shared Prosperity.""")
+* American countries generally have lower Shared Prosperity (negative). Asia countries: Kazakhstan, Mongolia, and Iran, have negative income increase for Bottom 40% population. European countries, except Norway, have positive Shared Prosperity.""")
     st.markdown("") 
     st.markdown("""
 * Annualized grants growth rate and Shared Prosperity index are positively correlated. """)
