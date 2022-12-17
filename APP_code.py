@@ -50,33 +50,33 @@ Select_year = st.selectbox('Select Year',['2022','2021','2020','2019','2018','20
 # get grant data 
 def get_grants_dataset(Select_year):
     if Select_year == "2022":
-        grants_data = pd.read_csv("2022grants_withoutUSA.csv")
+        grants_data = pd.read_csv("data/2022grants_withoutUSA.csv")
     elif Select_year == "2021":
-        grants_data = pd.read_csv("2021grants_withoutUSA.csv")
+        grants_data = pd.read_csv("data/2021grants_withoutUSA.csv")
     elif Select_year == "2020":
-        grants_data = pd.read_csv("2020grants_withoutUSA.csv")
+        grants_data = pd.read_csv("data/2020grants_withoutUSA.csv")
     elif Select_year == "2019":
-        grants_data = pd.read_csv("2019grants_withoutUSA.csv")
+        grants_data = pd.read_csv("data/2019grants_withoutUSA.csv")
     elif Select_year == "2018":
-        grants_data = pd.read_csv("2018grants_withoutUSA.csv")
+        grants_data = pd.read_csv("data/2018grants_withoutUSA.csv")
     elif Select_year == "2017":
-        grants_data = pd.read_csv("2017grants_withoutUSA.csv")
+        grants_data = pd.read_csv("data/2017grants_withoutUSA.csv")
     elif Select_year == "2016":
-        grants_data = pd.read_csv("2016grants_withoutUSA.csv")
+        grants_data = pd.read_csv("data/2016grants_withoutUSA.csv")
     elif Select_year == "2015":
-        grants_data = pd.read_csv("2015grants_withoutUSA.csv")
+        grants_data = pd.read_csv("data/2015grants_withoutUSA.csv")
     else:
-        grants_data  = pd.read_csv("2014grants_withoutUSA.csv")
+        grants_data  = pd.read_csv("data/2014grants_withoutUSA.csv")
     return grants_data
 
 # read in geojson
-all_country = json.load(open("all_country.geojson","r"))
+all_country = json.load(open("data/all_country.geojson","r"))
 # load shared prosperity data
-SSI = pd.read_csv("SSI.csv")
+SSI = pd.read_csv("data/SSI.csv")
 # load grants increase rate data
-merge_grants2014_2019 = pd.read_csv("grants_rate_2014_2019.csv")
+merge_grants2014_2019 = pd.read_csv("data/grants_rate_2014_2019.csv")
 # load sp-grantrate data
-grants2_inc_ssi_1 = pd.read_csv("grants2_inc_ssi.csv")
+grants2_inc_ssi_1 = pd.read_csv("data/grants2_inc_ssi.csv")
 
 
 ### Recall ###
@@ -191,7 +191,7 @@ with row9_1:
     st.subheader('Annualized Growth Rate')
 row10_spacer1, row10_1, row10_spacer2, row10_2, row10_spacer3  = st.columns((.2, 2.3, .4, 4.4, .2))
 with row10_1:
-    plot_x_per_type = st.selectbox ("Which annualized growth rate do you want to see?", ['Annualized Grants Growth Rate (2014-2019)','Shared Prosperity'])
+    plot_x_per_type = st.selectbox ("Which annualized growth rate do you want to see?", ['Shared Prosperity','Annualized Grants Growth Rate (2014-2019)'])
     st.markdown(""" 
     * **Shared Prosperity Index:** Shared prosperity measures the extent to which economic growth is inclusive by focusing on household consumption or income growth among the poorest population rather than on total growth.""")   
     st.markdown("""
