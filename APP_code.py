@@ -33,8 +33,8 @@ with row3_1:
 expander_bar = st.expander("About")
 expander_bar.markdown("""
 * **Python libraries:** Pandas, Streamlit, Numpy, Plotly, BeautifulSoup, requests, json
-* **Data source:** [USAspending API](https://www.usaspending.gov).USAspending is the official open data source of federal spending information. It tracks how federal maony is spent in communities accross America and beyond.[Shared Prosperity Data]("https://www.worldbank.org/en/topic/poverty/brief/global-database-of-shared-prosperity").Shared prosperity focuses on the poorest 40 percent of the population in a country (the bottom 40) and is defined as the annualized growth rate of their mean household per capita consumption or income. It is an important indicator of inclusion and well-being that correlate with reductions in poverty and inequality (World Bank, 2022). 
-* **Data collection:** For more information on how shared prosperity data is collected, please refer to [Global Database of Shared Prosperity]("https://openknowledge.worldbank.org/bitstream/handle/10986/34496/9781464816024.pdf#page=106").
+* **Data source:** [USAspending API](https://www.usaspending.gov).USAspending is the official open data source of federal spending information. It tracks how federal maony is spent in communities accross America and beyond.[Shared Prosperity Data](https://www.worldbank.org/en/topic/poverty/brief/global-database-of-shared-prosperity).Shared prosperity focuses on the poorest 40 percent of the population in a country (the bottom 40) and is defined as the annualized growth rate of their mean household per capita consumption or income. It is an important indicator of inclusion and well-being that correlate with reductions in poverty and inequality (World Bank, 2022). 
+* **Data collection:** For more information on how shared prosperity data is collected, please refer to [Global Database of Shared Prosperity](https://openknowledge.worldbank.org/bitstream/handle/10986/34496/9781464816024.pdf#page=106).
 """) 
     
 # Make selectbox a sidebar
