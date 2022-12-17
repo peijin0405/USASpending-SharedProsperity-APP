@@ -1,8 +1,5 @@
-beautifulsoup4==4.11.1
 country_converter==0.7.3
 numpy==1.21.6
 pandas==1.2.4
 plotly==5.7.0
-requests==2.25.1
 streamlit==1.16.0
-~treamlit==1.4.0
