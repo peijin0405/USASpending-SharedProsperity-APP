@@ -101,7 +101,7 @@ with row5_1:
     * **Grants Amount:** Refers to the sum of money given by a USA government to other countries to facilitate a goal or incentivize performance.""")   
     st.markdown("")
     st.markdown("""
-* Each year, more than two hundred countries receive aid from the United States, aid disproportionately goes to a few.
+* Each year, more than two hundred countries receive grants from the United States; however grants disproportionately go to a few.
 * Africa has long been the largest grants recipient continent.
 * In recent years, there has been a significant increase in funding to East Asia (mainly Ukraine).
 """) 
