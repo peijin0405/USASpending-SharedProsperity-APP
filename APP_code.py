@@ -14,9 +14,9 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import country_converter as coco
 
+
+
 st.set_page_config(layout="wide")
-
-
 
 row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
 with row0_1:
@@ -42,9 +42,9 @@ st.markdown("")
 st.markdown("Which year of U.S. grants data you want to explore?")  
 Select_year = st.selectbox('Select Year',['2022','2021','2020','2019','2018','2017','2016','2015','2014'])
                                       
-    
+
 ### Data Import ###
-# get grant data 
+# get grant data    
 def get_grants_dataset(Select_year):
     if Select_year == "2022":
         grants_data = pd.read_csv("data/2022grants_withoutUSA.csv")
@@ -74,6 +74,8 @@ SSI = pd.read_csv("data/SSI.csv")
 merge_grants2014_2019 = pd.read_csv("data/grants_rate_2014_2019.csv")
 # load sp-grantrate data
 grants2_inc_ssi_1 = pd.read_csv("data/grants2_inc_ssi.csv")
+# load all year grants
+all_year = pd.read_csv("data/all_year.csv")
 
 
 ### Recall ###
@@ -102,53 +104,51 @@ with row5_1:
 * Africa has long been the largest grants recipient continent.
 * In recent years, there has been a significant increase in funding to East Asia (mainly Ukraine).
 """) 
-     
     
+# prepare for plotting     
+
 with row5_2:
-    # plot 
-    # prepare for plotting
-    country_id_map = {}
-    for feature in all_country["features"]:
-        feature["properties"]['name']= coco.convert(names=feature["properties"]['name'], to='name_short')
-        feature["id"] = feature["properties"]['name']
-        country_id_map[feature["properties"]['name']] = feature["id"]
-
-    ##list the countires in the gepjson file 
-    list = []
-    list.extend(country_id_map)
-    list_0 = {"geo_list_0": list}
-    geo_list = DataFrame(list_0)    
-
-    ## merge dfs
-    merge7 = geo_list.merge(grants_data,how="left",left_on="geo_list_0",right_on="Country Name")
-    merge8 = merge7.filter(["geo_list_0","Amount","UN Region","Total Population","Amount ","Population","Population ","Population Date"])
-    merge9 = merge8.rename(columns={"geo_list_0":"Country Name"})
-
-    merge9["id"] = merge9["Country Name"].apply(lambda x:country_id_map[x])
-    # log the numbers
-    merge9["log_Grants Amount"] = np.log10(merge9["Amount"])
-
-    fig1 = px.choropleth_mapbox(merge9,
-                        locations = "id",
-                        geojson = all_country,
-                        color="log_Grants Amount",
-                       hover_name = "Country Name",
-                       #hover_data = merge9.columns,
-                        hover_data = {"id": False,
-                                    "log_Grants Amount":False,
-                                    "Amount ": True,
-                                   "Population ": True,
-                                    "Population Date": True},
-                         mapbox_style = "carto-positron",
-                        color_continuous_scale="magma",
-                         zoom= 0.57,opacity = 0.3,
-                        center = {"lat": 34.55,"lon":18.04},
-                        title = "Distribution of USA Grants Spending around the world in FY" + Select_year 
-                     ,labels={'log_Grants Amount': 'Grants Amount'}
-                        )
-    fig1.update_layout(margin={"r":0,"t":40,"l":0,"b":0})
+    @st.cache(allow_output_mutation =True)
+    def plot1(grants_data):
+        country_id_map = {}
+        for feature in all_country["features"]:
+            feature["properties"]['name']= coco.convert(names=feature["properties"]['name'], to='name_short')
+            feature["id"] = feature["properties"]['name']
+            country_id_map[feature["properties"]['name']] = feature["id"]    
+        list = []##list the countires in the gepjson file 
+        list.extend(country_id_map)
+        list_0 = {"geo_list_0": list}
+        geo_list = DataFrame(list_0)    
+        ## merge dfs
+        merge7 = geo_list.merge(grants_data,how="left",left_on="geo_list_0",right_on="Country Name")
+        merge8 = merge7.filter(["geo_list_0","Amount","UN Region","Total Population","Amount ","Population","Population ","Population Date"])
+        merge9 = merge8.rename(columns={"geo_list_0":"Country Name"})
+        merge9["id"] = merge9["Country Name"].apply(lambda x:country_id_map[x])
+        # log the numbers
+        merge9["log_Grants Amount"] = np.log10(merge9["Amount"])
+        #st.dataframe(data=merge9)
+        fig1 = px.choropleth_mapbox(merge9,
+                            locations = "id",
+                            geojson = all_country,
+                            color="log_Grants Amount",
+                           hover_name = "Country Name",
+                           #hover_data = merge9.columns,
+                            hover_data = {"id": False,
+                                        "log_Grants Amount":False,
+                                        "Amount ": True,
+                                       "Population ": True,
+                                        "Population Date": True},
+                             mapbox_style = "carto-positron",
+                            color_continuous_scale="magma",
+                             zoom= 0.57,opacity = 0.3,
+                            center = {"lat": 34.55,"lon":18.04},
+                            title = "Distribution of USA Grants Spending around the world in FY" + Select_year 
+                         ,labels={'log_Grants Amount': 'Grants Amount'}
+                            )
+        fig1.update_layout(margin={"r":0,"t":40,"l":0,"b":0})
+        return fig1
+    fig1 = plot1(grants_data)
     st.plotly_chart(fig1)
-
 
 
 ### Grants Sunburst Map ###
@@ -178,6 +178,192 @@ with row7_2:
     fig2.update_layout(margin={"r":0,"t":40,"l":0,"b":0})
     st.plotly_chart(fig2)
 
+### Grants per country ###
+row12_spacer1, row12_1, row12_spacer2 = st.columns((.2, 7.1, .2))
+with row12_1:
+    st.subheader('U.S. Grants Spending Trends')
+row13_spacer1, row13_1, row13_spacer2, row13_2, row13_spacer3  = st.columns((.2, 2.3, .4, 4.4, .2))
+with row13_1:
+    st.markdown('What is the grants trend by continent and country?  What is the share of grants by continent and country?')    
+    plot_continent = st.selectbox ("Select the continent you want to see:", ['All continents','Africa','Americas','Asia','Europe','Oceania'])
+       
+    if plot_continent == "All continents":
+        plot_country = st.selectbox ("Select the country you want to see:", [''])
+    elif plot_continent == "Africa":
+        plot_country = st.selectbox ("Select the country you want to see:", ['South Africa', 'Ethiopia', 'Kenya', 'Nigeria', 'Uganda',
+       'Tanzania', 'South Sudan', 'Central African Republic', 'Sudan',
+       'DR Congo', 'Mozambique', 'Ghana', 'Somalia', 'Egypt', 'Liberia',
+       'Senegal', 'Zambia', 'Niger', 'Rwanda', 'Malawi', 'Zimbabwe',
+       "Cote d'Ivoire", 'Burkina Faso', 'Mali', 'Chad', 'Benin',
+       'Botswana', 'Angola', 'Namibia', 'Cameroon', 'Madagascar', 'Libya',
+       'Sierra Leone', 'Tunisia', 'Congo Republic', 'Morocco', 'Guinea',
+       'Eswatini', 'Mauritania', 'Lesotho', 'Burundi', 'Gabon', 'Algeria',
+       'Djibouti', 'Guinea-Bissau', 'Gambia', 'Cabo Verde', 'Togo',
+       'Equatorial Guinea', 'Comoros', 'Mauritius', 'Western Sahara',
+       'Seychelles', 'Sao Tome and Principe', 'St. Helena', 'Eritrea'])
+    elif plot_continent == "Americas":
+         plot_country = st.selectbox ("Select the country you want to see:", ['Haiti', 'Colombia', 'Guatemala', 'Canada', 'El Salvador', 'Peru',
+       'Nicaragua', 'Honduras', 'Mexico', 'Brazil', 'Dominican Republic',
+       'Paraguay', 'Ecuador', 'Jamaica', 'Barbados', 'Bermuda',
+       'Trinidad and Tobago', 'Belize', 'Panama', 'Costa Rica',
+       'Venezuela', 'Argentina', 'Bahamas', 'Bolivia', 'Guyana', 'Chile',
+       'Uruguay', 'Dominica', 'Grenada', 'Suriname', 'Cuba',
+       'Cayman Islands', 'Antigua and Barbuda',
+       'St. Vincent and the Grenadines', 'Falkland Islands', 'Greenland',
+       'St. Lucia', 'Aruba', 'Turks and Caicos Islands', 'St. Barths',
+       'Anguilla', 'St. Kitts and Nevis', 'Saint-Martin',
+       'British Virgin Islands', 'Curacao'])
+    elif plot_continent == "Asia":
+        plot_country = st.selectbox ("Select the country you want to see:", ['Syria', 'Afghanistan', 'Jordan', 'Pakistan', 'Bangladesh',
+       'India', 'Yemen', 'Philippines', 'Iraq', 'Lebanon', 'Thailand',
+       'Nepal', 'Myanmar', 'Turkey', 'Cambodia', 'Indonesia', 'Israel',
+       'Vietnam', 'Laos', 'China', 'Tajikistan', 'Georgia', 'Kazakhstan',
+       'Armenia', 'Kyrgyz Republic', 'Sri Lanka', 'Timor-Leste',
+       'Maldives', 'Azerbaijan', 'Singapore', 'Japan', 'Malaysia',
+       'Mongolia', 'Uzbekistan', 'South Korea', 'Saudi Arabia', 'Cyprus',
+       'Turkmenistan', 'Bahrain', 'Taiwan', 'Bhutan',
+       'United Arab Emirates', 'Macau', 'Hong Kong', 'Palestine', 'Qatar',
+       'Kuwait', 'Oman', 'Brunei Darussalam', 'North Korea', 'Iran'])
+    elif plot_continent == "Europe":
+        plot_country = st.selectbox ("Select the country you want to see:", ['Switzerland', 'Italy', 'Ukraine', 'United Kingdom', 'France',
+       'Moldova', 'Bosnia and Herzegovina', 'Austria', 'Macedonia',
+       'Czech Republic', 'Germany', 'Serbia', 'Netherlands', 'Albania',
+       'Denmark', 'Belarus', 'Malta', 'Sweden', 'Bulgaria', 'Russia',
+       'Iceland', 'Finland', 'Ireland', 'Croatia', 'Belgium', 'Spain',
+       'Poland', 'Hungary', 'Portugal', 'Greece', 'Kosovo', 'Luxembourg',
+       'Lithuania', 'Romania', 'Montenegro', 'Estonia', 'Latvia',
+       'Slovenia', 'Norway', 'Vatican', 'Slovakia', 'Andorra']) 
+    else:
+        plot_country = st.selectbox ("Select the country you want to see:", ['Fiji', 'Australia', 'Papua New Guinea', 'New Zealand',
+       'Solomon Islands', 'New Caledonia', 'Vanuatu', 'Tonga',
+       'French Polynesia', 'Samoa', 'Kiribati', 'Tuvalu', 'Nauru',
+       'Cook Islands', 'Niue'])
+        
+            
+        
+with row13_2:
+    if plot_continent == "All continents":
+        conti_mean = all_year.groupby(["UN Region","Year"])[["Amount"]].mean().reset_index()
+        fig6 = px.line(conti_mean, x='Year', y='Amount', color='UN Region', symbol="UN Region")
+        fig6.update_layout(
+            showlegend=True,
+            plot_bgcolor="rgb(240,240,240)",
+            margin=dict(t=40,l=0,b=0,r=0),
+            title_text='FY2014-FY2022 Grants Trands by Continent',
+            #title_font_family='Times New Roman',
+            #legend_title_text='Dollars Obligated',
+            title_font_size = 17,
+            title_font_color="black",
+            #title_x=0.5,
+            xaxis=dict(
+            tickfont_size=14,
+            tickangle = 270,
+            showgrid = True,
+            zeroline = True,
+            showline = True,
+            showticklabels = True,
+            dtick=1
+            ),
+            legend=dict(
+            x=0.01,
+            y=0.99,
+            bgcolor='rgba(255, 255, 255, 0)',
+            bordercolor='rgba(255, 255, 255, 0)'
+            ),
+            bargap=0.15)
+        fig6.update_xaxes(tickangle=0)
+        fig6.update_traces(line=dict(width=2.7),
+                    marker=dict(size=7,line=dict(width=1,color='white')))
+        st.plotly_chart(fig6)
+        
+    else:
+        # filter countires by continent
+        all_year_eu = all_year.loc[all_year["UN Region"] == plot_continent].reset_index()
+        # clean the dataset
+        all_year_eu = all_year_eu.drop(['index', 'Unnamed: 0'],axis = 'columns')
+        # select the country 
+        eu_sw = all_year_eu.loc[all_year_eu["Country Name"] == plot_country]
+        # calculate the ave on the continent level 
+        eu_mean = all_year_eu.groupby(["Year"])[["Amount"]].mean()
+        # plot
+        ##create figure with secondary y-axis
+        fig7 = make_subplots(specs=[[{"secondary_y": True}]])
+
+        ## add traces
+        fig7.add_trace(
+            go.Scatter(
+                x=[2014, 2015, 2016, 2017, 2018,2019, 2020, 2021, 2022],
+                y=eu_mean['Amount'],
+                name="Europe average grants",
+                mode='lines+markers', 
+                marker={'size':9},
+                line = dict(color='firebrick', width=2.7)),
+                secondary_y=True
+            )
+
+        fig7.add_trace(
+            go.Bar(
+                x=[2014, 2015, 2016, 2017, 2018,2019, 2020, 2021, 2022],
+                y=eu_sw['Amount'],
+                name= plot_country + " grants amount",
+                #text = eu_sw['Year'],
+                textposition='outside',
+                textfont=dict(
+                size=13,
+                color='#1f77b4'),
+                marker_color='rgb(158,202,225)', 
+                marker_line_color='rgb(17, 69, 126)',
+                marker_line_width=2, 
+                opacity=0.7),
+                secondary_y=False
+            )
+
+        # strip down the rest of the plot
+
+        #fig.update_traces(texttemplate='%{y:$.2s}')
+        fig7.update_traces(texttemplate='%{y:.2s}')
+
+        fig7.update_layout(
+            showlegend=True,
+            plot_bgcolor="rgb(240,240,240)",
+            margin=dict(t=40,l=0,b=0,r=0),
+            title_text='FY 2014-2022 Grants Amount of '+ plot_country,
+            #title_font_family='Times New Roman',
+            legend_title_text='Dollars Obligated',
+            title_font_size = 17,
+            title_font_color="black",
+            #title_x=0.5,
+            xaxis=dict(
+            tickfont_size=14,
+            tickangle = 270,
+            showgrid = True,
+            zeroline = True,
+            showline = True,
+            showticklabels = True,
+            dtick=1
+            ),
+            legend=dict(
+            x=0.01,
+            y=0.99,
+            bgcolor='rgba(255, 255, 255, 0)',
+            bordercolor='rgba(255, 255, 255, 0)'
+            ),
+            bargap=0.15)
+
+        ## set y-axes titles
+        fig7.update_yaxes(title_text='Total Dollars Obligated USD', 
+                         titlefont_size=16, 
+                         tickfont_size=14,
+                         secondary_y=False)
+        fig7.update_yaxes(title_text='Average Dollars Obligated USD)', 
+                         titlefont_size=16, 
+                         tickfont_size=14, 
+                         secondary_y=True)
+        fig7.update_xaxes(tickangle=0)
+
+
+        st.plotly_chart(fig7)
+        
 ### Shared Prosperity ###
 row8_spacer1, row8_1, row8_spacer2 = st.columns((.2, 7.1, .2))
 with row8_1:
@@ -199,13 +385,23 @@ with row10_1:
     
 with row10_2: 
     if plot_x_per_type == "Shared Prosperity":
+        @st.cache(allow_output_mutation =True)
+        def plot3(SSI):
+            country_id_map = {}
+            for feature in all_country["features"]:
+                feature["properties"]['name']= coco.convert(names=feature["properties"]['name'], to='name_short')
+                feature["id"] = feature["properties"]['name']
+                country_id_map[feature["properties"]['name']] = feature["id"]    
+            list = []##list the countires in the gepjson file 
+            list.extend(country_id_map)
+            list_0 = {"geo_list_0": list}
+            geo_list = DataFrame(list_0)    
             SSI["standerd_name"]= coco.convert(names=SSI["countryname"], to='name_short')
             ## merge dfs
             merge_ssi = geo_list.merge(SSI,how="left",left_on="geo_list_0",right_on="standerd_name")
             merge_ssi_1 = merge_ssi.filter(["geo_list_0","Bottom 40%"])
             merge_ssi_2 = merge_ssi_1.rename(columns={"geo_list_0":"Country Name"})
             merge_ssi_2["id"] = merge_ssi_2["Country Name"].apply(lambda x:country_id_map[x])
-
             # plot 
             fig3 = px.choropleth_mapbox(merge_ssi_2,
                                 locations = "id",
@@ -222,8 +418,18 @@ with row10_2:
                                 title = "Map of Shared Prosperity"
                                 )
             fig3.update_layout(margin={"r":0,"t":40,"l":0,"b":0})
-            st.plotly_chart(fig3)
+            return fig3
+        fig3 = plot3(SSI)
+        st.plotly_chart(fig3)
+            
     else:
+        @st.cache(allow_output_mutation =True)
+        def plot4(merge_grants2014_2019):
+            country_id_map = {}
+            for feature in all_country["features"]:
+                feature["properties"]['name']= coco.convert(names=feature["properties"]['name'], to='name_short')
+                feature["id"] = feature["properties"]['name']
+                country_id_map[feature["properties"]['name']] = feature["id"] 
             merge_grants2014_2019["id"] =merge_grants2014_2019["Country Name"].apply(lambda x:country_id_map[x])
             # plot 
             fig4 = px.choropleth_mapbox(merge_grants2014_2019,
@@ -241,9 +447,11 @@ with row10_2:
                                  zoom= 0.57,opacity = 0.3,
                                 center = {"lat": 34.55,"lon":18.04},
                                 title = "Map of FY 2014-2019 Grants Annualized Growth Rate"
-                                ,labels={'Annualized Growth Rate': 'Grants Annualized Growth Rate'})
+                                ,labels={'Annualized Growth Rate': 'Grants Growth Rate'})
             fig4.update_layout(margin={"r":0,"t":40,"l":0,"b":0})
-            st.plotly_chart(fig4)
+            return fig4
+        fig4 = plot4(merge_grants2014_2019)
+        st.plotly_chart(fig4)
     
 ### SP v. Grants rate ###
 row11_spacer1, row11_1, row11_spacer2 = st.columns((.2, 7.1, .2))
@@ -283,20 +491,14 @@ with row11_2:
         ),
         paper_bgcolor='rgb(243, 243, 243)',
         plot_bgcolor='rgb(243, 243, 243)',
-    )
+        margin=dict(t=40,l=0,b=0,r=0),
+        title_font_size = 17,
+        title_font_color="black",
+        )
     st.plotly_chart(fig5)
+    
+    
  
-
-
-
-
-
-
-
-
-
-
-
 
 
 
