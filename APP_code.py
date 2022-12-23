@@ -254,7 +254,7 @@ with row13_2:
             #legend_title_text='Dollars Obligated',
             title_font_size = 17,
             title_font_color="black",
-            #title_x=0.5,
+            title_x=0.5,
             xaxis=dict(
             tickfont_size=14,
             tickangle = 270,
@@ -332,7 +332,7 @@ with row13_2:
             legend_title_text='Dollars Obligated',
             title_font_size = 17,
             title_font_color="black",
-            #title_x=0.5,
+            title_x=0.5,
             xaxis=dict(
             tickfont_size=14,
             tickangle = 270,
@@ -478,6 +478,7 @@ with row11_2:
                 )
     fig5.update_layout(
         title='Grants Annualized Growth Rate v. Shared Prosperity',
+        title_x=0.5,
         xaxis=dict(
             title='Grants Annualized Growth Rate (FY 2014-2019)',
             gridcolor='white',
@@ -489,12 +490,17 @@ with row11_2:
             gridcolor='white',
             gridwidth=2,
         ),
-        paper_bgcolor='rgb(243, 243, 243)',
+        #paper_bgcolor='rgb(243, 243, 243)',
         plot_bgcolor='rgb(243, 243, 243)',
         margin=dict(t=40,l=0,b=0,r=0),
         title_font_size = 17,
         title_font_color="black",
-        )
+        legend=dict(
+        yanchor="top",
+        y=0.99,
+        xanchor="left",
+        x=0.01
+        ))
     st.plotly_chart(fig5)
     
     
