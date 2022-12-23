@@ -10,6 +10,7 @@ The data I employ for the final project comes from USAspending API  and Shared P
 “Shared prosperity focuses on the poorest 40 percent of the population in a country (the bottom 40) and is defined as the annualized growth rate of their mean household per capita consumption or income”(World Bank, 2022). Shared prosperity measures the extent to which economic growth is inclusive, focusing on household consumption or income growth of the poorest rather than aggregate growth. It is an important indicator of inclusion and well-being that correlate with reductions in poverty and inequality. The baseline year of Shared Prosperity varies among countries, but the majority of them start around 2014 and end around 2019.  
 
 In order to match the scale of Share Prosperity data, I use FY2014 and FY2019 grants data to calculate the annualized grants growth rate with the formula : 
+
  ![image](https://user-images.githubusercontent.com/89746479/209273549-6853c4a5-3344-4c2e-b59e-4b0c191e77ba.png)
 
 where V(tn) is the initial value, V(t0) is the end value, and tn-t0 is the number of years. In this case, V(tn) equals to Grants 2014, V(t0) equals to Grants 2019, and (tn-t0) equals to 5.
