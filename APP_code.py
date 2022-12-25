@@ -294,7 +294,7 @@ with row13_2:
             go.Scatter(
                 x=[2014, 2015, 2016, 2017, 2018,2019, 2020, 2021, 2022],
                 y=eu_mean['Amount'],
-                name="Europe average grants",
+                name= plot_continent + " average grants",
                 mode='lines+markers', 
                 marker={'size':9},
                 line = dict(color='firebrick', width=2.7)),
