@@ -15,7 +15,10 @@ In order to match the scale of Share Prosperity data, I use FY2014 and FY2019 gr
 
 where V(tn) is the initial value, V(t0) is the end value, and tn-t0 is the number of years. In this case, V(tn) equals to Grants 2014, V(t0) equals to Grants 2019, and (tn-t0) equals to 5.
 
-### Insights
+#### Trend 
+![QQ图片20230105221330](https://user-images.githubusercontent.com/89746479/210922662-e2f99d39-863c-4167-aa16-d60d37f2f064.png)
+
+#### Insights
 First, with the choropleth chart of U.S. Grants spending from FY2014 to FY2022. We could find that each year, more than two hundred countries receive grants from the United States; however, grants disproportionately go to a few. And Africa has long been the largest grants recipient continent. In recent years, there has been a significant increase in funding to East Asia (mainly Ukraine). This may be related to the international political situation and international relations.
 
 With the Sunburst Chart of U.S. Grants Spending, we can learn that The long-standing distribution pattern is that the African continent has the largest share, followed by Europe, then Asia and the Americas, with Australia having the smallest share. After 2020, the U.S. grants gradually tilted toward Europe. In European, the grants are mainly concentrated in two countries-Switzerland and Ukraine. In 2022, the sum of the two countries accounts for about 90% of the entire European grants. 
