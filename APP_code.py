@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[ ]:
-
+#! pip install streamlit
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -21,9 +21,11 @@ st.set_page_config(layout="wide")
 row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
 with row0_1:
     st.title('US Grants - Shared Prosperity Analyzer')
+    st.markdown('<h5>Streamlit App by <a href="https://www.linkedin.com/in/peijin-li-a594a1149/">Peijin Li</a></h5>', unsafe_allow_html=True)
+
 with row0_2:
     st.text("")
-    st.subheader('Streamlit App by [Peijin Li](https://www.linkedin.com/in/peijin-li-a594a1149/)')
+    #st.subheader('Streamlit App by [Peijin Li](https://www.linkedin.com/in/peijin-li-a594a1149/)')
 row3_spacer1, row3_1, row3_spacer2 = st.columns((.1, 3.2, .1))
 with row3_1:
     st.markdown("This app presents the worldwide distribution of U.S. Grants spending from FY 2014 to FY 2022. Through this app, you could learn the distribution of U.S. Grants by continent and by country. Further, with the Shared Prosperity Index proposed by the World Bank, the app provides a chance to explore the relationship between U.S. Grants and Inclusive Growth.")
@@ -33,7 +35,7 @@ with row3_1:
 expander_bar = st.expander("About")
 expander_bar.markdown("""
 * **Python libraries:** Pandas, Streamlit, Numpy, Plotly, BeautifulSoup, requests, json
-* **Data source:** [USAspending API](https://www.usaspending.gov).USAspending is the official open data source of federal spending information. It tracks how federal maony is spent in communities accross America and beyond.[Shared Prosperity Data](https://www.worldbank.org/en/topic/poverty/brief/global-database-of-shared-prosperity).Shared prosperity focuses on the poorest 40 percent of the population in a country (the bottom 40) and is defined as the annualized growth rate of their mean household per capita consumption or income. It is an important indicator of inclusion and well-being that correlate with reductions in poverty and inequality (World Bank, 2022). 
+* **Data source:** [USAspending API](https://www.usaspending.gov). USAspending is the official open data source of federal spending information. It tracks how federal maony is spent in communities accross America and beyond.[Shared Prosperity Data](https://www.worldbank.org/en/topic/poverty/brief/global-database-of-shared-prosperity). Shared prosperity focuses on the poorest 40 percent of the population in a country (the bottom 40) and is defined as the annualized growth rate of their mean household per capita consumption or income. It is an important indicator of inclusion and well-being that correlate with reductions in poverty and inequality (World Bank, 2022). 
 * **Data collection:** For more information on how shared prosperity data is collected, please refer to [Global Database of Shared Prosperity](https://openknowledge.worldbank.org/bitstream/handle/10986/34496/9781464816024.pdf#page=106).
 """) 
     
@@ -108,7 +110,7 @@ with row5_1:
 # prepare for plotting     
 
 with row5_2:
-    @st.cache(allow_output_mutation =True)
+    @st.cache_data
     def plot1(grants_data):
         country_id_map = {}
         for feature in all_country["features"]:
@@ -247,7 +249,7 @@ with row13_2:
         fig6 = px.line(conti_mean, x='Year', y='Amount', color='UN Region', symbol="UN Region")
         fig6.update_layout(
             showlegend=True,
-            plot_bgcolor="rgb(240,240,240)",
+            plot_bgcolor="white",
             margin=dict(t=40,l=0,b=0,r=0),
             title_text='FY2014-FY2022 Grants Trands by Continent',
             #title_font_family='Times New Roman',
@@ -267,7 +269,7 @@ with row13_2:
             legend=dict(
             x=0.01,
             y=0.99,
-            bgcolor='rgba(255, 255, 255, 0)',
+            bgcolor='#F5F5F5',
             bordercolor='rgba(255, 255, 255, 0)'
             ),
             bargap=0.15)
@@ -320,12 +322,11 @@ with row13_2:
 
         # strip down the rest of the plot
 
-        #fig.update_traces(texttemplate='%{y:$.2s}')
         fig7.update_traces(texttemplate='%{y:.2s}')
 
         fig7.update_layout(
             showlegend=True,
-            plot_bgcolor="rgb(240,240,240)",
+            plot_bgcolor="#F5F5F5",
             margin=dict(t=40,l=0,b=0,r=0),
             title_text='FY 2014-2022 Grants Amount of '+ plot_country,
             #title_font_family='Times New Roman',
@@ -374,7 +375,7 @@ with row9_1:
     st.subheader('Annualized Growth Rate')
 row10_spacer1, row10_1, row10_spacer2, row10_2, row10_spacer3  = st.columns((.2, 2.3, .4, 4.4, .2))
 with row10_1:
-    plot_x_per_type = st.selectbox ("Which annualized growth rate do you want to see?", ['Shared Prosperity','Annualized Grants Growth Rate (2014-2019)'])
+    plot_x_per_type = st.selectbox ("Which annualized growth rate do you want to see?", ['Shared Prosperity (2014-2019)','Annualized Grants Growth Rate (2014-2019)'])
     st.markdown(""" 
     * **Shared Prosperity Index:** Shared prosperity measures the extent to which economic growth is inclusive by focusing on household consumption or income growth among the poorest population rather than on total growth.""")   
     st.markdown("""
@@ -384,8 +385,8 @@ with row10_1:
     
     
 with row10_2: 
-    if plot_x_per_type == "Shared Prosperity":
-        @st.cache(allow_output_mutation =True)
+    if plot_x_per_type == "Shared Prosperity (2014-2019)":
+        @st.cache_data
         def plot3(SSI):
             country_id_map = {}
             for feature in all_country["features"]:
@@ -414,8 +415,7 @@ with row10_2:
                                  mapbox_style = "carto-positron",
                                 color_continuous_scale="magma",
                                  zoom= 0.57,opacity = 0.3,
-                                center = {"lat": 34.55,"lon":18.04},
-                                title = "Map of Shared Prosperity"
+                                center = {"lat": 34.55,"lon":18.04}
                                 )
             fig3.update_layout(margin={"r":0,"t":40,"l":0,"b":0})
             return fig3
@@ -423,14 +423,16 @@ with row10_2:
         st.plotly_chart(fig3)
             
     else:
-        @st.cache(allow_output_mutation =True)
+        @st.cache_data
         def plot4(merge_grants2014_2019):
             country_id_map = {}
             for feature in all_country["features"]:
                 feature["properties"]['name']= coco.convert(names=feature["properties"]['name'], to='name_short')
                 feature["id"] = feature["properties"]['name']
                 country_id_map[feature["properties"]['name']] = feature["id"] 
-            merge_grants2014_2019["id"] =merge_grants2014_2019["Country Name"].apply(lambda x:country_id_map[x])
+            #merge_grants2014_2019["id"] =merge_grants2014_2019["Country Name"].apply(lambda x:country_id_map[x])
+            merge_grants2014_2019["id"] = merge_grants2014_2019["Country Name"].apply(lambda x: country_id_map.get(x, "Unknown"))
+
             # plot 
             fig4 = px.choropleth_mapbox(merge_grants2014_2019,
                                 locations = "id",
@@ -460,10 +462,26 @@ with row11_1:
 row11_spacer1, row11_1, row11_spacer2, row11_2, row11_spacer3  = st.columns((.2, 2.3, .4, 4.7, .2))
 with row11_1:
     st.markdown("""
-* American countries generally have lower Shared Prosperity (negative). Asia countries: Kazakhstan, Mongolia, and Iran, have negative income increase for Bottom 40% population. European countries, except Norway, have positive Shared Prosperity.""")
-    st.markdown("") 
+* Lower Shared Prosperity in Specific American Countries: Countries in the Americas such as Colombia, Argentina, and Peru tend to exhibit negative shared prosperity indices, indicating that the bottom 40% of the population experienced limited or even negative income growth.
+    """)
+    st.markdown("")
     st.markdown("""
-* Annualized grants growth rate and Shared Prosperity index are positively correlated. """)
+* Mixed Performance in Asian Countries: While most Asian countries show positive income growth for the bottom 40% of the population, Turkey stands out with negative income growth in this segment.
+    """)
+    st.markdown("")
+    st.markdown("""
+* Positive and Negative Trends in Europe: While many European countries have positive shared prosperity indices, some, like Switzerland and Russia, show negative income growth for the bottom 40% of their populations.
+    """)
+    st.markdown("")
+    st.markdown("""
+* Annualized grants growth rate and Shared Prosperity index are positively correlated. This implies that countries with higher grants growth rates tend to see more significant income growth for their lower-income populations.
+    """)
+    st.markdown("")
+    st.markdown("""
+* Limited Data for African Countries: African countries (light pink bubbles) are less represented in the chart, suggesting that there may be limited data or that the impact of grants growth and shared prosperity in this region is less pronounced.
+    """)
+
+
     
     
 with row11_2:
@@ -490,8 +508,7 @@ with row11_2:
             gridcolor='white',
             gridwidth=2,
         ),
-        #paper_bgcolor='rgb(243, 243, 243)',
-        plot_bgcolor='rgb(243, 243, 243)',
+        plot_bgcolor='#F5F5F5',
         margin=dict(t=40,l=0,b=0,r=0),
         title_font_size = 17,
         title_font_color="black",
