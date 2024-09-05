@@ -11,8 +11,7 @@ The data I employ for the final project comes from USAspending API  and Shared P
 
 In order to match the scale of Share Prosperity data, I use FY2014 and FY2019 grants data to calculate the annualized grants growth rate with the formula : 
 
- ![image](https://user-images.githubusercontent.com/89746479/209273549-6853c4a5-3344-4c2e-b59e-4b0c191e77ba.png)
- $$
+$$
 \text{CAGR}(t_0, t_n) = \left( \frac{V(t_n)}{V(t_0)} \right)^{\frac{1}{t_n - t_0}} - 1
 $$
 
