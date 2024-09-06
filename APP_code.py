@@ -29,7 +29,7 @@ with row0_2:
 row3_spacer1, row3_1, row3_spacer2 = st.columns((.1, 3.2, .1))
 with row3_1:
     st.markdown("This app presents the worldwide distribution of U.S. Grants spending from FY 2014 to FY 2022. The dashboard offers insights into how grants were allocated globally, highlighting trends, growth rates, and the correlation between U.S. grants and economic growth, measured by the Shared Prosperity Index.")
-    st.markdown("You can find the source code in the [Peijin GitHub Repository](https://github.com/peijin0405/USASpending-SharedProsperity-APP)")
+    st.markdown("You can find the source code in [Peijin GitHub Repository](https://github.com/peijin0405/USASpending-SharedProsperity-APP)")
     
 # About
 expander_bar = st.expander("About")
