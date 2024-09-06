@@ -1,6 +1,6 @@
 # USASpending-SharedProsperity-APP
 # Streamlit Cloud Link: 
-https://peijin0405-usaspending-sharedprosperity-app-app-code-r7n4tx.streamlit.app/
+[https://peijin0405-usaspending-sharedprosperity-app-app-code-r7n4tx.streamlit.app/](https://usaspending-sharedprosperity-app.streamlit.app/)
 
 ### US Grants - Shared Prosperity Analyzer
 #### Executive summary
