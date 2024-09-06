@@ -462,23 +462,15 @@ with row11_1:
 row11_spacer1, row11_1, row11_spacer2, row11_2, row11_spacer3  = st.columns((.2, 2.3, .4, 4.7, .2))
 with row11_1:
     st.markdown("""
-* Lower Shared Prosperity in Specific American Countries: Countries in the Americas such as Colombia, Argentina, and Peru tend to exhibit negative shared prosperity indices, indicating that the bottom 40% of the population experienced limited or even negative income growth.
+* In the Americas, countries like Colombia, Argentina, and Peru show negative shared prosperity, with the bottom 40% experiencing little or no income growth. Similarly, some European countries, such as Switzerland and Russia, report negative growth for this segment.
     """)
     st.markdown("")
     st.markdown("""
-* Mixed Performance in Asian Countries: While most Asian countries show positive income growth for the bottom 40% of the population, Turkey stands out with negative income growth in this segment.
-    """)
-    st.markdown("")
-    st.markdown("""
-* Positive and Negative Trends in Europe: While many European countries have positive shared prosperity indices, some, like Switzerland and Russia, show negative income growth for the bottom 40% of their populations.
+* In contrast, most Asian countries see positive growth for this group, though Turkey shows a decline.
     """)
     st.markdown("")
     st.markdown("""
 * Annualized grants growth rate and Shared Prosperity index are positively correlated. This implies that countries with higher grants growth rates tend to see more significant income growth for their lower-income populations.
-    """)
-    st.markdown("")
-    st.markdown("""
-* Limited Data for African Countries: African countries (light pink bubbles) are less represented in the chart, suggesting that there may be limited data or that the impact of grants growth and shared prosperity in this region is less pronounced.
     """)
 
 
