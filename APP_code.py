@@ -28,7 +28,7 @@ with row0_2:
     #st.subheader('Streamlit App by [Peijin Li](https://www.linkedin.com/in/peijin-li-a594a1149/)')
 row3_spacer1, row3_1, row3_spacer2 = st.columns((.1, 3.2, .1))
 with row3_1:
-    st.markdown("This app presents the worldwide distribution of U.S. Grants spending from FY 2014 to FY 2022. Through this app, you could learn the distribution of U.S. Grants by continent and by country. Further, with the Shared Prosperity Index proposed by the World Bank, the app provides a chance to explore the relationship between U.S. Grants and Inclusive Growth.")
+    st.markdown("This app presents the worldwide distribution of U.S. Grants spending from FY 2014 to FY 2022. The dashboard offers insights into how grants were allocated globally, highlighting trends, growth rates, and the correlation between U.S. grants and economic growth, measured by the Shared Prosperity Index.")
     st.markdown("You can find the source code in the [Peijin GitHub Repository](https://github.com/peijin0405/USASpending-SharedProsperity-APP)")
     
 # About
@@ -472,7 +472,6 @@ with row11_1:
     st.markdown("""
 * Annualized grants growth rate and Shared Prosperity index are positively correlated. This implies that countries with higher grants growth rates tend to see more significant income growth for their lower-income populations.
     """)
-
 
     
     
